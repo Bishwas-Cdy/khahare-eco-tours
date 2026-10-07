@@ -14,6 +14,16 @@ The client places particular importance on a premium animated experience. VELORA
 
 Preserve a distinct Khahare Eco Tours identity grounded in Nepal, travel, nature, culture, adventure, responsible tourism, local expertise, authenticity, and human connection. Do not produce a generic WordPress tourism template, mass-market booking portal, dashboard, or UI component showcase.
 
+## Design and migration rule
+
+The production WordPress website is a content and factual source, not a visual reference. This is a complete brand-level, visual, and experiential rebuild—not a WordPress redesign or visual migration.
+
+**Core rule: Preserve truth and SEO value, not old design decisions.**
+
+Preserve only material with real value: verified company and trip information, useful reviews, contact and legal details, valid travel guidance, suitable rights-cleared photography, and public URLs worth retaining for SEO. Existing URLs may remain while their page designs are replaced completely.
+
+Do not preserve an old layout, section order, navigation model, typography, color palette, visual hierarchy, card style, page composition, image treatment, footer, mobile layout, transition, interaction pattern, or animation language merely because it exists. Major pages may be designed from first principles within the constraints of factual accuracy, SEO, accessibility, usability, performance, mobile quality, security, and maintainability.
+
 ## Production safety
 
 The current WordPress website at <https://www.khahareecotours.com/> remains live during development. Unless I explicitly instruct it, never:
@@ -85,15 +95,29 @@ Do not significantly reorganize this structure without a concrete architectural 
 
 ## Design direction
 
-The visual experience should feel premium, cinematic, calm, sophisticated, editorial, intentional, nature-focused, trustworthy, and human.
+The visual experience should feel like a luxury expedition brand, a high-end hospitality experience, an editorial travel publication, and a carefully art-directed digital experience. It should remain premium, cinematic, calm, sophisticated, intentional, nature-focused, trustworthy, human, authentic, and distinctly Nepal-focused.
 
-Build quality through excellent photography, typography, whitespace, scale, composition, pacing, and restrained motion. Avoid clutter, excessive gradients, ubiquitous glassmorphism, excessive rounded cards, random badges, generic icon grids, cheap hover effects, and animation without purpose.
+Build quality through exceptional photography, typography, whitespace, scale, visual hierarchy, asymmetric editorial composition, pacing, authentic content, and restrained but sophisticated motion. Avoid anything that resembles an AI-generated site, generic trekking template, typical WordPress tourism site, component-library demo, mass-market booking portal, or collection of unrelated animated sections.
+
+Avoid common synthetic design patterns: excessive rounded cards, generic gradients, ubiquitous glassmorphism, meaningless icon grids, fake statistics, vague luxury slogans, excessive centered layouts, repetitive section structures, nonspecific “Discover / Explore / Journey” copy, cheap hover effects, and animation without purpose.
+
+Use references by purpose. Study Intrepid Travel, G Adventures, and other strong adventure operators for trip architecture, conversion, and usability. Study &Beyond, Black Tomato, Explora, premium hospitality and expedition brands, and usable editorial/Awwwards-level work for visual direction and storytelling. Do not copy any one site. Combine luxury hospitality restraint, expedition storytelling, strong trip information architecture, and sophisticated GSAP-level motion while keeping the identity locally grounded.
 
 ## Animation
 
-Animation is a core requirement and should be designed into the experience from the start. Suitable techniques include masked text reveals, staggered typography, hero image movement, subtle scale transitions, parallax, image clipping and reveals, scroll-linked transformations, tasteful pinned storytelling, section and navigation transitions, sophisticated hover movement, and carefully choreographed timelines.
+Animation is a core requirement and should be designed into the experience from the start. The guiding principle is: **motion everywhere in the experience, not animation on every element.**
 
-Avoid bouncing interfaces, random rotations, excessive motion, long blocking introductions, scroll hijacking, effects that impair reading, and animation that damages usability. Prefer `transform` and `opacity`; animate layout-affecting properties sparingly.
+Use motion at several levels:
+
+- page level: introductions, transitions, navigation, hero choreography, and scroll progression;
+- section level: image reveals, parallax, pinned storytelling, layered movement, and scroll-linked transformations;
+- component level: trip cards, buttons, galleries, itineraries, and review interactions;
+- micro-interactions: hover movement, underlines, arrows, appropriate cursor responses, and tasteful magnetic effects; and
+- cinematic moments: fullscreen trek introductions, scroll-driven stories, itinerary storytelling, destination transitions, route/map sequences, and large image-led sections.
+
+Masked text reveals, staggered typography, subtle scale changes, clipping, and carefully choreographed timelines may support these levels where they serve the story.
+
+Motion must remain intentional, smooth, performant, usable, and accessible. Avoid bouncing interfaces, random rotations, excessive motion, long blocking introductions, scroll hijacking, noisy or gimmicky effects, nausea-inducing motion, effects that impair reading, and animation pasted onto every element. Prefer `transform` and `opacity`; animate layout-affecting properties sparingly.
 
 Always respect `prefers-reduced-motion`. Mobile does not need to reproduce every desktop effect. Reduce animation when mobile usability, performance, or accessibility requires it.
 

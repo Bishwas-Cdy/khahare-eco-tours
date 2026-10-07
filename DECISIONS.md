@@ -32,6 +32,12 @@ GSAP and ScrollTrigger provide the control needed for refined, choreographed mot
 
 The client requires a highly premium animated website. The design will emphasize photography, typography, whitespace, editorial composition, pacing, and restrained motion while retaining a distinct Nepal travel identity.
 
+## 2026-10-07 — Brand-level rebuild with broad creative freedom
+
+**Status:** Accepted
+
+The existing WordPress site is a factual, content, and SEO source—not a visual reference. Major pages may be redesigned from first principles, preserving verified truth and valuable URLs while replacing old design decisions with a bespoke, premium experience subject to accessibility, usability, performance, mobile quality, security, and maintainability.
+
 ## 2026-10-07 — Cloudflare infrastructure
 
 **Status:** Accepted
