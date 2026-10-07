@@ -1,0 +1,58 @@
+[data-reveal],
+[data-reveal-inner],
+[data-reveal-media],
+[data-stagger-item],
+[data-line-draw],
+[data-parallax],
+[data-scene-shift] {
+  will-change: auto;
+}
+
+.motion-ready [data-reveal],
+.motion-ready [data-reveal-inner],
+.motion-ready [data-reveal-media],
+.motion-ready [data-stagger-item],
+.motion-ready [data-line-draw],
+.motion-ready [data-parallax],
+.motion-ready [data-scene-shift] {
+  will-change: transform, opacity;
+}
+
+[data-reveal='mask'] {
+  overflow: clip;
+}
+
+[data-reveal-inner] {
+  display: block;
+}
+
+.motion-ready [data-reveal='clip'] {
+  will-change: clip-path;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  [data-reveal],
+  [data-reveal-inner],
+  [data-reveal-media],
+  [data-stagger-item],
+  [data-line-draw],
+  [data-parallax],
+  [data-scene-shift] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  [data-reveal='clip'] {
+    clip-path: none !important;
+  }
+}

@@ -12,6 +12,8 @@ The target perception is:
 
 The experience should feel bespoke, art-directed, cinematic, editorial, quiet but confident, sophisticated, immersive, human, natural, culturally grounded, and premium without appearing artificial.
 
+The overall atmosphere is light-dominant: airy, warm, sunlit, calm, and connected to mountain light, stone, linen, hospitality, and natural daylight. Premium must not be interpreted as gloomy, black-heavy, or permanently moody. Deep forest and other dark surfaces are reserved for deliberate contrast and cinematic emphasis rather than used as the site's default field.
+
 The existing WordPress website has zero visual authority over the new design. It must never feel like the output of a generic template or AI website prompt.
 
 ## Reference model
@@ -93,9 +95,11 @@ Avoid typography that makes the brand resemble SaaS, finance, cryptocurrency, fu
 
 The final palette is not yet locked. It should be natural, grounded, sophisticated, restrained, and inspired by Nepal and its landscapes.
 
-Potential color families include deep forest, dark mineral tones, warm off-white, stone, earth, muted moss, and occasional culturally meaningful accents where their use is justified.
+Warm paper, pale mineral, linen, and sunlit stone should form the dominant surface hierarchy. Potential supporting families include deep forest, dark mineral tones, earth, muted moss, and occasional culturally meaningful accents where their use is justified.
 
-Avoid neon, overly saturated palettes, generic technology gradients, and fake metallic gold used as a shortcut for luxury. Premium character must come from execution rather than stereotypical “luxury colors.”
+The site must remain light-dominant without becoming beige, flat, or bland. Visual tension should come from typography, composition, scale, imagery, and selective contrast. Deep forest remains an important brand color, but primarily as an accent, text color, image tone, or occasional special-section surface. Dark sections should be rare enough to feel intentional.
+
+Avoid black-heavy luxury styling, dark hotel-lounge atmosphere, nightclub mood, neon, overly saturated palettes, generic technology gradients, and fake metallic gold used as a shortcut for luxury. Premium character must come from execution rather than stereotypical “luxury colors.”
 
 ## Photography
 

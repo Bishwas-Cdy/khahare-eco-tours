@@ -1,0 +1,209 @@
+@import './reset.css';
+@import './tokens.css';
+@import './typography.css';
+@import './motion.css';
+
+html {
+  background: var(--color-background);
+}
+
+body {
+  overflow-x: clip;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+::selection {
+  background: var(--color-moss);
+  color: var(--color-white);
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 0.3rem;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: var(--z-overlay);
+  inset: var(--space-3) auto auto var(--space-3);
+  padding: 0.75rem 1rem;
+  transform: translateY(-200%);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.container,
+.container-wide {
+  width: min(100% - (var(--site-gutter) * 2), var(--container-max));
+  margin-inline: auto;
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+.reading-measure {
+  width: min(100%, var(--measure-copy));
+}
+
+.site-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.surface-dark {
+  background: var(--color-surface-dark);
+  color: var(--color-paper);
+}
+
+.surface-mineral {
+  background: var(--color-mineral);
+  color: var(--color-paper);
+}
+
+.surface-warm {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.surface-sunlit {
+  background: var(--color-surface-cool);
+  color: var(--color-ink);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+  padding-block: 0.15rem 0.35rem;
+  text-decoration: none;
+}
+
+.text-link::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  background: currentColor;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after {
+  transform: scaleX(0.22);
+}
+
+.link-arrow {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-standard);
+}
+
+.text-link:hover .link-arrow,
+.text-link:focus-visible .link-arrow {
+  transform: translateX(0.35rem);
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    transform var(--duration-base) var(--ease-standard);
+}
+
+.button:hover,
+.button:focus-visible {
+  background: transparent;
+  color: var(--color-ink);
+  transform: translateY(-0.15rem);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.button--secondary:hover,
+.button--secondary:focus-visible {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.surface-dark .button,
+.surface-mineral .button {
+  border-color: var(--color-paper);
+  background: var(--color-paper);
+  color: var(--color-forest-deep);
+}
+
+.surface-dark .button:hover,
+.surface-dark .button:focus-visible,
+.surface-mineral .button:hover,
+.surface-mineral .button:focus-visible {
+  background: transparent;
+  color: var(--color-paper);
+}
+
+.image-treatment {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-stone);
+}
+
+.image-treatment > img,
+.image-treatment > picture,
+.image-treatment > .image-treatment__media {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--duration-slow) var(--ease-emphasis);
+}
+
+.image-treatment:hover > img,
+.image-treatment:hover > picture,
+.image-treatment:hover > .image-treatment__media {
+  transform: scale(1.025);
+}
+
+@media (min-width: 48rem) {
+  .site-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}

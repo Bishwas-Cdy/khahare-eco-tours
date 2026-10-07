@@ -1,0 +1,67 @@
+---
+import { siteConfig } from '../data/site';
+import PageIntro from '../components/PageIntro.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string | URL;
+  image?: string | URL;
+  bodyClass?: string;
+  lang?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = siteConfig.defaultDescription,
+  canonical,
+  image,
+  bodyClass,
+  lang = 'en',
+  noindex = false,
+} = Astro.props;
+
+const documentTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.name;
+const canonicalUrl = canonical ? new URL(canonical, Astro.url).toString() : undefined;
+const socialImage = image ? new URL(image, Astro.url).toString() : undefined;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content={siteConfig.themeColor} />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <script is:inline>
+      document.documentElement.classList.add('has-js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('page-intro-pending');
+      }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={documentTitle} />
+    <meta property="og:description" content={description} />
+    {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+    {socialImage && <meta property="og:image" content={socialImage} />}
+
+    <title>{documentTitle}</title>
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    <PageIntro />
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,62 @@
+.page-intro {
+  position: fixed;
+  z-index: calc(var(--z-overlay) + 100);
+  inset: 0;
+  display: none;
+  place-items: center;
+  overflow: hidden;
+  background: var(--color-curtain);
+  color: var(--color-forest-deep);
+  pointer-events: none;
+  transform: translateY(0);
+}
+
+html.page-intro-pending .page-intro {
+  display: grid;
+  animation: curtain-failsafe 900ms var(--ease-emphasis) 1400ms forwards;
+}
+
+html.page-intro-active .page-intro {
+  animation: none;
+  pointer-events: auto;
+}
+
+html.page-intro-active,
+html.page-intro-active body {
+  overflow: hidden;
+}
+
+.page-intro__mark {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+}
+
+.page-intro__mark > :first-child {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.page-intro__mark > :last-child {
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes curtain-failsafe {
+  to {
+    visibility: hidden;
+    transform: translateY(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-intro,
+  html.page-intro-pending .page-intro {
+    display: none;
+    animation: none;
+  }
+}
