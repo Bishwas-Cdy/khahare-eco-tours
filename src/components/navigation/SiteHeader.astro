@@ -1,6 +1,5 @@
 ---
 import { navigationItems } from '../../data/navigation';
-import { siteConfig } from '../../data/site';
 import '../../styles/components/site-header.css';
 
 const primaryItems = navigationItems.filter((item) => item.type !== 'cta');
@@ -9,9 +8,14 @@ const enquiryItem = navigationItems.find((item) => item.type === 'cta');
 
 <header class="site-header" data-site-header data-theme="dark">
   <div class="site-header__bar">
-    <a class="site-wordmark" href="/" aria-label={`${siteConfig.name} home`}>
-      <span class="site-wordmark__name">Khahare</span>
-      <span class="site-wordmark__descriptor">Eco Tours · Nepal</span>
+    <a class="site-wordmark" href="/">
+      <img
+        class="site-wordmark__image"
+        src="/images/KHAHARE%20Mountain%20River%20Logo.png"
+        alt="Khahare Eco Tours"
+        width="1774"
+        height="887"
+      />
     </a>
 
     <nav class="desktop-navigation" aria-label="Primary navigation">

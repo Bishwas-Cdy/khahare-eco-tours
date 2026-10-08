@@ -31,25 +31,17 @@
 }
 
 .site-wordmark {
-  display: grid;
+  display: inline-flex;
+  align-items: center;
   justify-self: start;
   color: inherit;
-  line-height: 1;
   text-decoration: none;
 }
 
-.site-wordmark__name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: -0.035em;
-}
-
-.site-wordmark__descriptor {
-  margin-top: 0.35rem;
-  font-size: 0.53rem;
-  font-weight: 650;
-  letter-spacing: 0.19em;
-  text-transform: uppercase;
+.site-wordmark__image {
+  width: auto;
+  height: 4.33rem;
+  transform: translateY(0.0625rem);
 }
 
 .desktop-navigation__list {
@@ -196,6 +188,11 @@
   .site-header__bar {
     grid-template-columns: 1fr auto;
     min-height: 5.25rem;
+  }
+
+  .site-wordmark__image {
+    height: 3.25rem;
+    transform: none;
   }
 
   .desktop-navigation,
