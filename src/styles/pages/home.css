@@ -1,0 +1,11 @@
+.home-page {
+  background: var(--color-paper);
+}
+
+.home-main {
+  min-height: 100svh;
+}
+
+.home-page.navigation-open {
+  overflow: hidden;
+}

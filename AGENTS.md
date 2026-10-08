@@ -101,6 +101,8 @@ Build quality through exceptional photography, typography, whitespace, scale, vi
 
 Avoid common synthetic design patterns: excessive rounded cards, generic gradients, ubiquitous glassmorphism, meaningless icon grids, fake statistics, vague luxury slogans, excessive centered layouts, repetitive section structures, nonspecific “Discover / Explore / Journey” copy, cheap hover effects, and animation without purpose.
 
+Follow the decorative-restraint rule in `DESIGN_DIRECTION.md`: line motifs should not be used by default and require a clear functional or compositional purpose.
+
 Use references by purpose. Study Intrepid Travel, G Adventures, and other strong adventure operators for trip architecture, conversion, and usability. Study &Beyond, Black Tomato, Explora, premium hospitality and expedition brands, and usable editorial/Awwwards-level work for visual direction and storytelling. Do not copy any one site. Combine luxury hospitality restraint, expedition storytelling, strong trip information architecture, and sophisticated GSAP-level motion while keeping the identity locally grounded.
 
 ## Animation

@@ -1,22 +1,31 @@
 ---
+import HomeHero from '../components/home/HomeHero.astro';
+import SiteHeader from '../components/navigation/SiteHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import '../styles/pages/index.css';
+import '../styles/pages/home.css';
 ---
 
 <BaseLayout
-  title="Foundation"
-  description="The visual foundation for the Khahare Eco Tours rebuild is being established."
-  bodyClass="foundation-index"
+  description="Khahare Eco Tours creates thoughtful tours and treks rooted in Nepal's landscapes and living culture."
+  bodyClass="home-page"
 >
-  <main id="main-content" class="index-shell">
-    <p class="type-meta index-shell__eyebrow">Khahare Eco Tours · Rebuild in progress</p>
-    <h1>Foundation before destination.</h1>
-    <p class="type-body-lg index-shell__copy">
-      The visual language, layout system, and motion behavior are being tested before the homepage is
-      art-directed.
-    </p>
-    <a class="text-link" href="/design-system/">
-      View the design playground <span class="link-arrow" aria-hidden="true">↗</span>
-    </a>
-  </main>
+  <SiteHeader />
+  <HomeHero />
 </BaseLayout>
+
+<script>
+  import { initHomeHero } from '../scripts/home-hero';
+  import { initMotion } from '../scripts/motion';
+
+  const cleanupMotion = initMotion();
+  const cleanupHomeHero = initHomeHero();
+
+  window.addEventListener(
+    'pagehide',
+    () => {
+      cleanupHomeHero();
+      cleanupMotion();
+    },
+    { once: true },
+  );
+</script>

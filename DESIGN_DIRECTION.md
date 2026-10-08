@@ -75,6 +75,8 @@ Use editorial composition. Consider:
 
 Not every section needs a visible box, background, or card. Photography should often become the layout itself. Treat whitespace as an active design element that creates focus, rhythm, and confidence.
 
+Decorative line motifs are not part of the default KET visual language. Avoid horizontal rules, vertical rails, underline bars, short divider lines, and similar line-based decoration unless they serve a clear functional or compositional purpose. Prefer typography, spacing, contrast, imagery, alignment, and motion instead.
+
 ## Typography
 
 Typography should carry a substantial share of the premium character. Aim for:

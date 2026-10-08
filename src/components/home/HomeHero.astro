@@ -1,0 +1,56 @@
+---
+import '../../styles/components/home-hero.css';
+---
+
+<main id="main-content" class="home-main">
+  <section
+    class="home-hero"
+    aria-labelledby="home-hero-title"
+    data-home-hero
+    data-header-theme="dark"
+  >
+    <figure class="home-hero__media" data-hero-media-frame>
+      <img
+        src="/images/placeholders/home-hero-landscape.svg"
+        alt=""
+        width="1600"
+        height="1800"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        data-hero-media
+      />
+      <figcaption>Temporary visual field · Client photography pending</figcaption>
+    </figure>
+
+    <div class="home-hero__grid">
+      <p class="home-hero__eyebrow type-meta" data-hero-support>
+        Nepal <span aria-hidden="true">/</span> Tours &amp; treks
+      </p>
+
+      <h1 id="home-hero-title" class="home-hero__title">
+        <span class="home-hero__title-mask"><span data-hero-title-line="first">Nepal,</span></span>
+        <span class="home-hero__title-mask home-hero__title-mask--offset">
+          <span data-hero-title-line="second">at a human pace.</span>
+        </span>
+      </h1>
+
+      <div class="home-hero__introduction" data-hero-support>
+        <span class="home-hero__introduction-rule" aria-hidden="true"></span>
+        <p>Mountains, living culture, and the quiet detail between them.</p>
+      </div>
+
+      <a class="home-hero__journeys-link" href="/trek/" data-hero-support>
+        <span>See tours &amp; treks</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <a class="home-hero__scroll" href="#hero-end" data-hero-scroll>
+        <span>Scroll</span>
+        <span class="home-hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="hero-end" class="home-hero__tail" aria-hidden="true"></div>
+  </section>
+</main>
