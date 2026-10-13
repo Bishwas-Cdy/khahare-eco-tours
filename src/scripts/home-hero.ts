@@ -14,10 +14,25 @@ export function initHomeHero(): Cleanup {
   gsap.registerPlugin(ScrollTrigger);
 
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const video = hero.querySelector<HTMLVideoElement>('[data-hero-video]');
   const root = document.documentElement;
   let introHasCompleted = !root.classList.contains('page-intro-pending');
   let animationContext: gsap.Context | undefined;
   let entranceTimeline: gsap.core.Timeline | undefined;
+
+  const syncVideoPlayback = () => {
+    if (!video) return;
+
+    video.muted = true;
+
+    if (motionPreference.matches) {
+      video.pause();
+      video.currentTime = 0;
+      return;
+    }
+
+    void video.play().catch(noop);
+  };
 
   const createAnimations = () => {
     animationContext?.revert();
@@ -28,27 +43,18 @@ export function initHomeHero(): Cleanup {
     animationContext = gsap.context(() => {
       const media = hero.querySelector<HTMLElement>('[data-hero-media]');
       const mediaFrame = hero.querySelector<HTMLElement>('[data-hero-media-frame]');
-      const titleLines = hero.querySelectorAll<HTMLElement>('[data-hero-title-line]');
-      const firstTitleLines = hero.querySelectorAll<HTMLElement>('[data-hero-title-line="first"]');
-      const secondTitleLines = hero.querySelectorAll<HTMLElement>('[data-hero-title-line="second"]');
-      const support = hero.querySelectorAll<HTMLElement>('[data-hero-support]');
       const scrollCue = hero.querySelector<HTMLElement>('[data-hero-scroll]');
       const header = document.querySelector<HTMLElement>('[data-site-header]');
 
       gsap.set(media, { scale: 1.045 });
-      gsap.set(titleLines, { yPercent: 110 });
-      gsap.set(support, { autoAlpha: 0, y: 14 });
       gsap.set(scrollCue, { autoAlpha: 0 });
       gsap.set(header, { autoAlpha: 0, y: -10 });
 
       entranceTimeline = gsap
         .timeline({ paused: true, defaults: { ease: 'power4.out' } })
         .to(media, { duration: 1.45, scale: 1 }, 0)
-        .to(firstTitleLines, { duration: 1.05, yPercent: 0 }, 0.2)
-        .to(secondTitleLines, { duration: 1.05, yPercent: 0 }, 0.32)
-        .to(header, { autoAlpha: 1, duration: 0.8, y: 0 }, 0.42)
-        .to(support, { autoAlpha: 1, duration: 0.85, stagger: 0.09, y: 0 }, 0.62)
-        .to(scrollCue, { autoAlpha: 1, duration: 0.7 }, 1.08);
+        .to(header, { autoAlpha: 1, duration: 0.8, y: 0 }, 0.3)
+        .to(scrollCue, { autoAlpha: 1, duration: 0.7 }, 0.72);
 
       if (introHasCompleted) entranceTimeline.play();
 
@@ -81,10 +87,14 @@ export function initHomeHero(): Cleanup {
     entranceTimeline?.play();
   };
 
-  const handlePreferenceChange = () => createAnimations();
+  const handlePreferenceChange = () => {
+    syncVideoPlayback();
+    createAnimations();
+  };
 
   window.addEventListener('ket:page-intro-complete', handleIntroComplete);
   motionPreference.addEventListener('change', handlePreferenceChange);
+  syncVideoPlayback();
   createAnimations();
 
   if (!root.classList.contains('page-intro-pending')) {

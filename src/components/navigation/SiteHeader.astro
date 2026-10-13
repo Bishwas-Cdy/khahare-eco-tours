@@ -2,20 +2,34 @@
 import { navigationItems } from '../../data/navigation';
 import '../../styles/components/site-header.css';
 
+interface Props {
+  initialTheme?: 'dark' | 'light';
+}
+
+const { initialTheme = 'dark' } = Astro.props;
 const primaryItems = navigationItems.filter((item) => item.type !== 'cta');
 const enquiryItem = navigationItems.find((item) => item.type === 'cta');
 ---
 
-<header class="site-header" data-site-header data-theme="dark">
+<header class="site-header" data-site-header data-theme={initialTheme}>
   <div class="site-header__bar">
-    <a class="site-wordmark" href="/">
-      <img
-        class="site-wordmark__image"
-        src="/images/KHAHARE%20Mountain%20River%20Logo.png"
-        alt="Khahare Eco Tours"
-        width="1774"
-        height="887"
-      />
+    <a class="site-wordmark" href="/" aria-label="Khahare Eco Tours home">
+      <span class="site-wordmark__media" aria-hidden="true">
+        <img
+          class="site-wordmark__image site-wordmark__image--normal"
+          src="/images/Logo-1.png"
+          alt=""
+          width="1448"
+          height="1086"
+        />
+        <img
+          class="site-wordmark__image site-wordmark__image--hero"
+          src="/images/Logo-2.png"
+          alt=""
+          width="1448"
+          height="1086"
+        />
+      </span>
     </a>
 
     <nav class="desktop-navigation" aria-label="Primary navigation">

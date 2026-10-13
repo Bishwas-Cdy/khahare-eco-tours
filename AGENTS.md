@@ -95,6 +95,8 @@ Do not significantly reorganize this structure without a concrete architectural 
 
 ## Design direction
 
+Read and follow `DESIGN_DIRECTION.md` for every visual, interaction, typography, and motion decision.
+
 The visual experience should feel like a luxury expedition brand, a high-end hospitality experience, an editorial travel publication, and a carefully art-directed digital experience. It should remain premium, cinematic, calm, sophisticated, intentional, nature-focused, trustworthy, human, authentic, and distinctly Nepal-focused.
 
 Build quality through exceptional photography, typography, whitespace, scale, visual hierarchy, asymmetric editorial composition, pacing, authentic content, and restrained but sophisticated motion. Avoid anything that resembles an AI-generated site, generic trekking template, typical WordPress tourism site, component-library demo, mass-market booking portal, or collection of unrelated animated sections.

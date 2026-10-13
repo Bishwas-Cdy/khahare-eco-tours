@@ -16,6 +16,29 @@ The overall atmosphere is light-dominant: airy, warm, sunlit, calm, and connecte
 
 The existing WordPress website has zero visual authority over the new design. It must never feel like the output of a generic template or AI website prompt.
 
+## KET identity and interaction philosophy
+
+The design system combines three layers:
+
+```text
+KET identity
+Nepal / nature / editorial / warm / human
+
++ Apple interaction principles
+fluidity / responsiveness / restraint / craft
+
++ existing motion system
+GSAP / ScrollTrigger / Lenis
+```
+
+KET's identity remains primary: authentic rather than generic travel-template styling, premium without becoming sterile, and cinematic while staying warm, human, nature-led, editorial, and unmistakably connected to Nepal. Strong real photography or video, careful typography and hierarchy, a light-dominant visual system, and premium editorial pacing should carry that identity.
+
+Use Apple-style interaction principles as guidance for behavior and craft, never as visual imitation. Interactions should feel fluid, responsive, restrained, spatially consistent, subtly physical, and immediately legible. Motion should be purposeful and interruptible where relevant, with immediate feedback, accessibility, and `prefers-reduced-motion` support built in.
+
+Do not make the site resemble Apple or iOS, replace KET's visual language with Apple's, spread glassmorphism across the interface, use gratuitous bounce or spring effects, or add decoration merely because it is technically impressive. Every interaction and animation needs a reason; avoid universal fade-up treatment and unnecessary decorative lines.
+
+Build on the existing GSAP, ScrollTrigger, Lenis, and project motion primitives. Add another animation framework only when a genuine requirement cannot be met cleanly by the current stack or native browser APIs. Performance remains part of the experience, and mobile behavior must be intentionally designed rather than reduced to a shrunken desktop treatment.
+
 ## Reference model
 
 Use references according to the problem being solved:
